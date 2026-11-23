@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090817">
+    <meta name="description" content="A little birthday magic, made with love for Rifa Jahan.">
+    <title>For Rifa, with love ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body data-scene="0">
+    <div class="backdrop" aria-hidden="true"></div>
+    <canvas id="dream-canvas" aria-label="An animated 3D birthday dream"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="loading" id="loading" role="status">Gathering a little magic<span>✦</span></div>
+
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Rifa's birthday surprise home"><span>R</span><i>✦</i></a>
+      <div class="chapter-label"><span class="chapter-number" id="chapter-number">01</span><span class="chapter-divider"></span><span id="chapter-name">A little surprise</span></div>
+      <div class="music-control">
+        <span class="music-note" aria-hidden="true">♫</span>
+        <span class="music-label" id="music-label">A song for you</span>
+        <button id="music-toggle" class="music-toggle" type="button" aria-label="Play birthday music" title="Play music">▶</button>
+        <button id="mute-toggle" class="mute-toggle" type="button" aria-label="Mute music" title="Mute music">♪</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="scene active" id="scene-0" aria-labelledby="entrance-title">
+        <div class="scene-content entrance-content">
+          <div class="eyebrow"><span class="eyebrow-line"></span>A little world, made for you<span class="eyebrow-line"></span></div>
+          <h1 id="entrance-title" class="entrance-title">Someone special<br>is <em>waiting for you</em><span class="title-sparkle">✦</span></h1>
+          <p class="scene-copy">A little surprise has been created just for you.</p>
+          <div class="entrance-door-hint"><span class="door-halo"></span><span class="door-caption">Your little world is just beyond</span></div>
+          <button class="button button-primary enter-button" id="enter-button" type="button"><span>Enter your surprise</span><b>✧</b></button>
+          <p class="tiny-note">Best enjoyed with the sound on <span>♡</span></p>
+        </div>
+      </section>
+
+      <section class="scene celebration-scene" id="scene-1" aria-labelledby="birthday-title" aria-hidden="true">
+        <div class="scene-content celebration-content">
+          <div class="eyebrow"><span class="eyebrow-line"></span>Today is all about you<span class="eyebrow-line"></span></div>
+          <p class="overline">The universe has something to celebrate</p>
+          <h2 id="birthday-title" class="birthday-title">Happy birthday,<br><em>Rifa Jahan!</em><span class="title-heart">♡</span></h2>
+          <p class="subtitle">To the girl who makes ordinary moments feel extraordinary.</p>
+          <div class="cake-note"><span class="cake-icon">✦</span><span>Make a wish, beautiful</span><span class="cake-icon">✦</span></div>
+          <button class="button button-quiet next-button" data-next="2" type="button">A few favorite memories <span>↓</span></button>
+        </div>
+        <div class="celebration-signature">With all my love, <span>Shakib Ahmed</span> <b>♥</b></div>
+      </section>
+
+      <section class="scene memories-scene" id="scene-2" aria-labelledby="memories-title" aria-hidden="true">
+        <div class="scene-content memories-content">
+          <div class="eyebrow"><span class="eyebrow-line"></span>Little moments, big feelings<span class="eyebrow-line"></span></div>
+          <h2 id="memories-title" class="section-title">Every picture holds a<br><em>little piece of happiness.</em></h2>
+          <p class="section-copy">Some people make life more beautiful just by being in it.</p>
+          <div class="memory-gallery">
+            <figure class="memory-card memory-card-main">
+              <span class="frame-corner frame-top-left"></span><span class="frame-corner frame-top-right"></span>
+              <img src="assets/images/rifa-portrait.jpg" alt="Rifa celebrating her birthday, surrounded by flowers and balloons" fetchpriority="high">
+              <figcaption><span class="caption-index">01</span><span>A day made brighter by you</span><span class="caption-heart">♡</span></figcaption>
+            </figure>
+            <figure class="memory-card memory-card-secondary">
+              <span class="frame-corner frame-top-left"></span><span class="frame-corner frame-top-right"></span>
+              <img src="assets/images/background.jpg" alt="A joyful birthday portrait of Rifa in a garden" loading="lazy">
+              <figcaption><span class="caption-index">02</span><span>Simply unforgettable</span><span class="caption-heart">♡</span></figcaption>
+            </figure>
+            <div class="gallery-stamp" aria-hidden="true"><span>for you</span><b>♡</b></div>
+          </div>
+          <p class="memory-footnote">Every moment is special when it becomes a memory.<br>Among millions of moments, some become priceless.</p>
+          <button class="button button-quiet next-button" data-next="3" type="button">A little something from my heart <span>↓</span></button>
+        </div>
+      </section>
+
+      <section class="scene messages-scene" id="scene-3" aria-labelledby="messages-title" aria-hidden="true">
+        <div class="scene-content messages-content">
+          <div class="eyebrow"><span class="eyebrow-line"></span>A few words, just for you<span class="eyebrow-line"></span></div>
+          <h2 id="messages-title" class="section-title">If my heart could speak…</h2>
+          <div class="message-heart-wrap">
+            <div class="heart-orbit orbit-one"></div><div class="heart-orbit orbit-two"></div>
+            <button class="heart-button" id="heart-button" type="button" aria-label="Reveal the next love message">
+              <span class="heart-glow"></span><span class="heart-shape">♥</span><span class="heart-prompt">tap my heart</span>
+            </button>
+          </div>
+          <div class="message-card" aria-live="polite">
+            <span class="message-count" id="message-count">01 <i>/ 06</i></span>
+            <p id="love-message">Rifa, you are one of the most beautiful chapters of my life.</p>
+            <span class="message-flourish">✧ &nbsp; ♡ &nbsp; ✧</span>
+          </div>
+          <p class="message-instruction">Tap the glowing heart for the next little note</p>
+          <button class="button button-quiet next-button" data-next="4" type="button">One more surprise <span>↓</span></button>
+        </div>
+      </section>
+
+      <section class="scene gift-scene" id="scene-4" aria-labelledby="gift-title" aria-hidden="true">
+        <div class="scene-content gift-content">
+          <div class="eyebrow"><span class="eyebrow-line"></span>Wrapped with all my love<span class="eyebrow-line"></span></div>
+          <h2 id="gift-title" class="section-title">Rifa, I have one more<br><em>surprise for you…</em></h2>
+          <p class="section-copy gift-intro">A little wish, from me to you.</p>
+          <button class="gift-button" id="gift-button" type="button" aria-label="Open your birthday gift">
+            <span class="gift-spark gift-spark-one">✦</span><span class="gift-spark gift-spark-two">✧</span>
+            <span class="gift-lid"></span><span class="gift-box"></span><span class="gift-ribbon"></span><span class="gift-bow"></span>
+            <span class="gift-button-label">Open your gift <b>↗</b></span>
+          </button>
+          <div class="gift-message glass-card" id="gift-message" aria-live="polite" hidden>
+            <span class="gift-message-kicker">A wish, just for you</span>
+            <p>Dear Rifa,</p>
+            <p>On your special day, I wish you endless happiness, good health, success, and peace.</p>
+            <p>May every dream you carry in your heart find its way into reality.</p>
+            <p>Keep smiling, keep shining, and never stop being the wonderful person you are.</p>
+            <p>Thank you for being such a special part of my life.</p>
+            <p class="gift-wish">Happy Birthday, Rifa Jahan!</p>
+            <p class="gift-signoff">With love,<br><span>Shakib Ahmed ♥</span></p>
+          </div>
+          <button class="button button-quiet next-button gift-next" data-next="5" type="button">One last wish <span>↓</span></button>
+        </div>
+      </section>
+
+      <section class="scene final-scene" id="scene-5" aria-labelledby="final-title" aria-hidden="true">
+        <div class="scene-content final-content">
+          <div class="eyebrow"><span class="eyebrow-line"></span>And a thousand wishes for you<span class="eyebrow-line"></span></div>
+          <h2 id="final-title" class="final-title">Happy birthday,<br><em>my special Rifa!</em> <span>♥</span></h2>
+          <div class="final-message glass-card">
+            <p>May this new chapter of your life bring you more happiness than you ever imagined.</p>
+            <p>May you achieve every dream, overcome every challenge, and always find reasons to smile.</p>
+            <p>Today is your day. Enjoy every second of it.</p>
+            <p>You deserve the world and all its beautiful moments.</p>
+          </div>
+          <div class="final-photos" aria-label="Birthday memories">
+            <img src="assets/images/background.jpg" alt="Rifa at her birthday celebration" loading="lazy">
+            <img src="assets/images/rifa-portrait.jpg" alt="Rifa smiling on her special day" loading="lazy">
+          </div>
+          <p class="final-signature">Forever wishing you happiness,<br><span>Shakib Ahmed ♥</span></p>
+          <button class="button button-primary replay-button" id="replay-button" type="button">Replay our little magic <b>✧</b></button>
+        </div>
+        <div class="final-footer">Made with love, for Rifa <span>♡</span></div>
+      </section>
+    </main>
+
+    <nav class="scene-nav" aria-label="Birthday story chapters">
+      <button class="scene-dot active" data-scene="0" aria-label="Scene 1: A little surprise" aria-current="step"></button>
+      <button class="scene-dot" data-scene="1" aria-label="Scene 2: Birthday celebration"></button>
+      <button class="scene-dot" data-scene="2" aria-label="Scene 3: Favorite memories"></button>
+      <button class="scene-dot" data-scene="3" aria-label="Scene 4: Love notes"></button>
+      <button class="scene-dot" data-scene="4" aria-label="Scene 5: A special gift"></button>
+      <button class="scene-dot" data-scene="5" aria-label="Scene 6: One last wish"></button>
+    </nav>
+    <div class="scene-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+    <audio id="birthday-audio" src="assets/music/birthday-song.mpeg" preload="none" loop></audio>
+  </body>
+</html>
